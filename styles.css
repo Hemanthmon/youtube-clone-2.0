@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:focus{
+    outline: none; 
+    /* removes the default outline that browsers apply to elements when they receive focus, such as
+     when a user tabs through form fields or clickable elements. */
+}
+:root{
+    --primary-background-color: #f0f0f0;
+    --secondary-background-color: #fff;
+    --tertiary-background-color: #979797;
+    --border-color:  #dbdbdb;
+    --font-color: black;
+    --seperator-color: rgba(0, 0, 0, 0.1);
+}
+.dark-theme{
+    --primary-background-color: #121212;
+    --secondary-background-color: #1e1e1e;
+    --tertiary-background-color: #333333;
+    --border-color: #444444;
+    --font-color: #e0e0e0;
+    --seperator-color: rgba(255, 255, 255, 0.1);
+}
+
+body{
+    position: relative;
+    background: var(--primary-background-color);
+    font-family: 'roboto', sans-serif;
+    color: var(--font-color);
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--secondary-background-color);
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+}
+
+
+.toggle-btn{
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--font-color);
+}
+
+.toggle-btn span:nth-child(1){
+    top: 0;
+}
+.toggle-btn span:nth-child(3){
+    top: 100%;
+}
+#logo{
+    height: 30px;
+    margin: -10px 30px 0;
+}
+.search-box{
+    position: relative; 
+    /* allows you to position an element relative to its normal position in the document flow */
+    max-width: 500px;
+    width: 50%;
+    height: 35px;
+    display: flex;
+    margin: 0 auto;
+    background: var(--secondary-background-color);
+    color: var(--font-color);
+}
+#darkmode{
+    height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    cursor: pointer;
+}
+.search-bar{
+    width: 85%;
+    height: 100%;
+    border: 2px solid var(--border-color);
+    padding: 0 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+    background: var(--secondary-background-color);
+}
+
+.search-btn{
+    width: 15%;
+    height: 100%;
+    background: var(--primary-background-color);
+    border: 2px solid var(--border-color);
+    padding: 5px 0;
+    border-left: none;
+}
+
+.search-btn img{
+    height: 100%;
+}
+
+.user-options{
+    height: 35px;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.user-options .icon{
+    height: 80%;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.user-dp{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-dp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* side-bar */
+
+.side-bar{
+  position: fixed;
+  top: 60px;
+  left: 0;
+  min-width: 250px;
+  width: 250px;
+  height: calc(100vh - 60px);
+  padding-right: 10px;
+  background: var(--secondary-background-color);
+  color: var(--font-color);
+  transition: transform 0.3s ease;
+}
+
+.links {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: var(--font-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.links img {
+    height: 25px;
+    margin-right: 20px;
+
+}
+
+.links:hover,
+.links.active{
+    background:var(--seperator-color);
+}
+
+.seperator{
+    border: none;
+    border-bottom: 1px solid var(--seperator-color);
+    margin: 20px 0; 
+}
+
+.filters{
+    position: fixed;
+    left: 250px;
+    top: 60px;
+    width: calc(100% - 250px);
+    height: 60px;
+    background: var(--secondary-background-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto; 
+    /*  overflow-x used to control the horizontal overflow of content within an element */
+    overflow-y: hidden;
+}
+
+.filters::-webkit-scrollbar{
+    display: none;
+}
+
+.filter-options{
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: var(--secondary-background-color);
+    border: 1px solid var(--border-color);
+    text-transform: capitalize;
+    margin-right: 10px;
+    color: var(--font-color);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.filter-options.active{
+    color: var(--tertiary-background-color);
+    background: var(--font-color);
+}
+
+/* vedio */
+.videos-container{
+    width: calc(100% - 250px);
+    margin-top: 120px;
+    margin-left: 250px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px 5px;
+    overflow-x: hidden;
+    border: 1px solid brown;
+}
+.video{
+    display: flex;
+    flex-direction: column;
+    background: var(--secondary-background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.content {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.channel-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.title{
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+.channel-name{
+    font-size: 14px;
+    margin: 2px 0;
+    color: #979797;
+}
+
+@media (max-width: 768px){
+    .side-bar{
+        transform: translateX(-100%);
+    }
+    .filters {
+        left: 0;
+        width: 100%;
+    }
+    .videos-container {
+        width: 100%;
+        margin-left: 0;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width: 480px){
+    .videos-container{
+        grid-template-columns: 1fr;
+    }
+    .search-box {
+        width: 100%;
+    }
+    .search-bar {
+        width: 70%;
+    }
+    .search-btn{
+        width: 30%;
+    }
+}
