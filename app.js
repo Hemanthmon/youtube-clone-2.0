@@ -58,16 +58,3 @@ searchBtn.addEventListener('click', () => {
     }
 })
 
-const icon = document.getElementById('darkmode');
-const logo = document.getElementById('logo');
-icon.onclick = function () {
-    document.body.classList.toggle('dark-theme');
-    //update
-    if(document.body.classList.contains('dark-theme')){
-        logo.src = "images/darkmode.png"
-        icon.src = "images/sun.png"
-    }else{
-        logo.src = "images/logo.png"
-        icon.src = "images/moon.png"
-    }
-}

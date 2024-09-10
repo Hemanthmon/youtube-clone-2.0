@@ -16,14 +16,6 @@
     --font-color: black;
     --seperator-color: rgba(0, 0, 0, 0.1);
 }
-.dark-theme{
-    --primary-background-color: #121212;
-    --secondary-background-color: #1e1e1e;
-    --tertiary-background-color: #333333;
-    --border-color: #444444;
-    --font-color: #e0e0e0;
-    --seperator-color: rgba(255, 255, 255, 0.1);
-}
 
 body{
     position: relative;
@@ -82,12 +74,7 @@ body{
     background: var(--secondary-background-color);
     color: var(--font-color);
 }
-#darkmode{
-    height: 30px;
-    border-radius: 50%;
-    width: 30px;
-    cursor: pointer;
-}
+
 .search-bar{
     width: 85%;
     height: 100%;
